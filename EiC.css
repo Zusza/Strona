@@ -1,0 +1,93 @@
+body{
+    background-color: rgb(150, 147, 147);
+    background-image: url(tłoani.gif);
+    background-attachment: fixed;
+    background-size: 100%;
+    opacity: 90%;
+    font-family: 'Nunito Sans', sans-serif;
+
+}
+#container{
+    width:1000px;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+.logo{
+    color: rgb(175, 175, 175);
+    margin-top: 20px;
+    margin-left: center;
+    font-size: 40px;
+    
+}
+#menu{
+    background-color: rgb(143, 143, 143);
+    margin-top: 20px;
+    color:rgb(0, 0, 0);
+    padding: 10px;
+}
+#topbar{
+    /* background-color: rgb(168, 168, 168); */
+    color: black;
+    padding: 10px;
+    margin-top: 20px;
+    margin-bottom: 25px;
+}
+img{
+    width: 140px;
+    height: 270px;
+    margin-left: 400px;
+    margin-top: -60px;
+    position: absolute;
+}
+a{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
+#sidebar{
+    float: left;
+    width: 148px;
+    min-height: 620px;
+    padding: 20px;
+    text-align: center;
+    font-size: 18px;
+    background-color: rgb(206, 206, 206);
+}
+#content{
+    float: left;
+    padding: 40px;
+    width: 730px;
+    min-height: 580px;
+    text-align: justify;
+    background-color: rgb(206, 206, 206);
+    border-left: 2px solid rgb(54, 54, 54);
+    border-right: 2px solid rgb(54, 54, 54);
+    position: absolute;
+    left: 25%;
+    color:rgb(95, 95, 95);
+}
+.option{
+    float: left;
+    min-width: 50px;
+    height: 25px;
+    font-size: 18px;
+    padding: 10px;
+    border-right:2px solid rgb(54, 54, 54);
+    opacity: 40%;
+}
+.option:hover{
+    background-color: rgb(158, 158, 158);
+    cursor: pointer;
+}
+c{
+    font-size: 18px;
+    color: rgb(90, 90, 90);
+    
+}
+d{
+    font-size: 25px;
+    color: rgb(90, 90, 90);  
+}
+e{
+    color:rgb(206, 206, 206);
+}
