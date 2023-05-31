@@ -53,6 +53,19 @@ NATURAL JOIN produkty
 WHERE produkty.NazwaProduktu NOT LIKE "Kask%"
 ORDER BY produkty.NazwaProduktu
 
+
+zad 3
+CREATE VIEW ZadanieZSpr AS
+SELECT czlonkowie.ImieCzlonka AS Imie, czlonkowie.NazwiskoCzlonka AS Nazwisko, czlonkowie.TelefonCzlonka AS Telefon
+FROM czlonkowie
+UNION
+SELECT agenci.ImieAgenta, agenci.NazwiskoAgenta, agenci.TelefonAgenta
+FROM agenci
+UNION
+SELECT klienci.ImieKlienta, klienci.NazwiskoKlienta, klienci.TelefonKlienta
+FROM Zamowienia.klienci
+ORDER BY "Telefon"
+
 zad 4
 SELECT produkty.StanMagazynowy, produkty.NazwaProduktu, produkty.StanMagazynowy * produkty.CenaDetaliczna AS WykazWartosci
 FROM produkty
