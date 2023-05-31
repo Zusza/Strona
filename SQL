@@ -1,0 +1,59 @@
+1.
+SELECT DISTINCT MiastoDostawcy,MiastoKlienta FROM dostawcy,klienci WHERE MiastoKlienta = MiastoDostawcy;
+2.
+SELECT DISTINCT NazwiskoKlienta FROM klienci,produkty WHERE produkty.NazwaProduktu != "Kask";
+4.
+SELECT NazwaProduktu,CenaDetaliczna,StanMagazynowy,CenaDetaliczna*StanMagazynowy AS Wartosc FROM produkty;
+
+// Zadanie 1
+SELECT DISTINCT(MiastoDostawcy) AS Miasta
+FROM dostawcy
+INNER JOIN dostawcy_produktow  ON dostawcy.IDDostawcy=dostawcy_produktow.IDDostawcy
+iNNER jOIN dane_zamowien ON dostawcy_produktow.NumerProduktu=dane_zamowien.NumerProduktu
+INNER JOIN zamowienia ON dane_zamowien.NumerZamowienia=zamowienia.NumerZamowienia
+INNER JOIN klienci ON zamowienia.IDKlienta=klienci.IDKlienta
+WHERE dostawcy.MiastoDostawcy = klienci.MiastoKlienta;
+
+// Zadanie 2
+SELECT DISTINCT(ImieKlienta), NazwiskoKlienta
+FROM klienci
+INNER JOIN zamowienia ON klienci.IDKlienta=zamowienia.IDKlienta
+INNER JOIN dane_zamowien ON zamowienia.NumerZamowienia=dane_zamowien.NumerZamowienia
+INNER JOIN produkty ON dane_zamowien.NumerProduktu=produkty.NumerProduktu
+WHERE produkty.NazwaProduktu NOT LIKE ('Kask%');
+
+// Zadanie 3
+
+
+// Zadanie 4
+SELECT NazwaProduktu, CenaDetaliczna* StanMagazynowy AS WykazWartosci
+FROM produkty;
+
+
+
+/ Zadanie 5
+
+
+WERSJA BARTOSZ PERZ
+
+zad 1
+SELECT klienci.MiastoKlienta AS Miasta
+FROM klienci
+UNION
+SELECT dostawcy.MiastoDostawcy
+FROM dostawcy
+
+zad 2
+SELECT klienci.IDKlienta, produkty.NazwaProduktu
+FROM klienci
+NATURAL JOIN zamowienia
+NATURAL JOIN dane_zamowien
+NATURAL JOIN produkty
+WHERE produkty.NazwaProduktu NOT LIKE "Kask%"
+ORDER BY produkty.NazwaProduktu
+1.
+SELECT DISTINCT MiastoDostawcy,MiastoKlienta FROM dostawcy,klienci WHERE MiastoKlienta = MiastoDostawcy;
+2.
+SELECT DISTINCT NazwiskoKlienta FROM klienci,produkty WHERE produkty.NazwaProduktu != "Kask";
+4.
+SELECT NazwaProduktu,CenaDetaliczna,StanMagazynowy,CenaDetaliczna*StanMagazynowy AS Wartosc FROM produkty;
