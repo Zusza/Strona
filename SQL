@@ -1,3 +1,4 @@
+---------------------------------------------------------------------------------------------------------
 1.
 SELECT DISTINCT MiastoDostawcy,MiastoKlienta FROM dostawcy,klienci WHERE MiastoKlienta = MiastoDostawcy;
 2.
@@ -30,11 +31,11 @@ SELECT NazwaProduktu, CenaDetaliczna* StanMagazynowy AS WykazWartosci
 FROM produkty;
 
 
-
+ 
 / Zadanie 5
 
 
-WERSJA BARTOSZ PERZ
+WERSJA BARTOSZ PERZ DZIKI ZWIERZ
 
 zad 1
 SELECT klienci.MiastoKlienta AS Miasta
@@ -51,9 +52,18 @@ NATURAL JOIN dane_zamowien
 NATURAL JOIN produkty
 WHERE produkty.NazwaProduktu NOT LIKE "Kask%"
 ORDER BY produkty.NazwaProduktu
-1.
-SELECT DISTINCT MiastoDostawcy,MiastoKlienta FROM dostawcy,klienci WHERE MiastoKlienta = MiastoDostawcy;
-2.
-SELECT DISTINCT NazwiskoKlienta FROM klienci,produkty WHERE produkty.NazwaProduktu != "Kask";
-4.
-SELECT NazwaProduktu,CenaDetaliczna,StanMagazynowy,CenaDetaliczna*StanMagazynowy AS Wartosc FROM produkty;
+
+zad 4
+SELECT produkty.StanMagazynowy, produkty.NazwaProduktu, produkty.StanMagazynowy * produkty.CenaDetaliczna AS WykazWartosci
+FROM produkty
+ORDER BY produkty.NazwaProduktu
+
+zad 5
+SELECT produkty.NazwaProduktu
+FROM
+produkty
+LEFT JOIN
+dane_zamowien
+ON
+produkty.NumerProduktu = dane_zamowien.NumerProduktu
+WHERE dane_zamowien.NumerProduktu IS NULL
